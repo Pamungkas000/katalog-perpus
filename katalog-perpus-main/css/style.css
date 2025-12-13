@@ -1,0 +1,245 @@
+   * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f2f4f8;
+      }
+
+      /* Navbar */
+      .navbar {
+        background: linear-gradient(90deg, #243b55, #141e30);
+        color: #fff;
+        padding: 20px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0 0 12px 12px;
+      }
+
+      .navbar h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      /* Container */
+      .container {
+        padding: 32px;
+      }
+
+      /* Search */
+      .search-box {
+        margin-bottom: 24px;
+        max-width: 400px;
+        position: relative;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 12px 40px 12px 16px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        outline: none;
+      }
+
+      /* Layout */
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+      }
+
+      /* Book List */
+      .book-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .book-card {
+        background: #fff;
+        padding: 16px;
+        border-radius: 12px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .book-cover {
+        width: 70px;
+        height: 90px;
+        background: #e5e7eb;
+        border-radius: 8px;
+      }
+
+      .book-info {
+        flex: 1;
+      }
+
+      .book-info h3 {
+        margin: 0 0 6px;
+        font-size: 18px;
+      }
+
+      .book-info p {
+        margin: 2px 0;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .btn {
+        padding: 8px 14px;
+        border-radius: 8px;
+        border: none;
+        background: #f1f5f9;
+        cursor: pointer;
+        font-weight: 500;
+      }
+
+      /* Detail */
+      .detail-card {
+        background: #fff;
+        padding: 24px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .detail-header {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 16px;
+      }
+
+      .detail-cover {
+        width: 120px;
+        height: 160px;
+        background: #e5e7eb;
+        border-radius: 12px;
+      }
+
+      .detail-info h3 {
+        margin: 0 0 8px;
+        font-size: 22px;
+      }
+
+      .detail-info p {
+        margin: 4px 0;
+        color: #555;
+      }
+
+      .description {
+        margin-top: 16px;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 900px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
+}
+
+.navbar {
+  background: #1e293b;
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+.container {
+  padding: 32px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+#bookList .card {
+  background: white;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 8px;
+  text-decoration: none;
+    padding: 10px 16px;
+    border: 1px solid black;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.detail-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+footer {
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  margin-top: 32px;
+}
+
+.btn-kembali {
+  background-color: none;
+  color: white;
+  border: 1px solid black;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.btn-kembali a {
+  color: black;
+  text-decoration: none;
+}
+
+#cover {
+    border: 1px double black;
+  background-color: whitesmoke;
+  padding: 20px;
+}

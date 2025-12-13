@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tambah Buku</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <h1>Form Buku</h1>
+</nav>
+
+<div class="container">
+  <form id="bookForm">
+    <input type="hidden" id="id">
+
+    <input type="text" id="judul" placeholder="Judul Buku" required>
+    <input type="text" id="penulis" placeholder="Penulis" required>
+    <input type="number" id="tahun" placeholder="Tahun" required>
+    <input type="text" id="kategori" placeholder="Kategori" required>
+    <textarea id="deskripsi" placeholder="Deskripsi"></textarea>
+
+    <input type="file" id="cover" accept="image/*">
+    <img id="preview" style="max-width:150px; margin-top:10px;">
+
+    <button type="submit">Simpan</button>
+    <button class="btn-kembali"><a href="index.html">Kembali</a></button>
+  </form>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
+
