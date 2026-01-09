@@ -10,6 +10,9 @@ function fileToBase64(file, callback) {
   reader.readAsDataURL(file);
 }
 
+/* =======================
+   RENDER DAFTAR BUKU
+======================= */
 function renderBooks() {
   const list = document.getElementById('bookList');
   if (!list) return;
@@ -18,7 +21,7 @@ function renderBooks() {
 
   books.forEach((b, i) => {
     list.innerHTML += `
-      <div class="card book-item" style="margin-bottom:20px; padding:20px; border-radius:8px; display:flex; align-items:center; width:80    %; ">
+      <div class="card book-item" style="margin-bottom:20px; padding:20px; border-radius:8px; display:flex; align-items:center; width:80%;">
         <img 
           src="${b.cover || 'https://via.placeholder.com/100x150'}" 
           class="book-cover"
@@ -37,24 +40,54 @@ function renderBooks() {
   });
 }
 
+/* =======================
+   DETAIL + REKOMENDASI
+======================= */
 function showDetail(i) {
   const detail = document.getElementById('detail');
+  const rekom = document.getElementById('recommendation');
   const b = books[i];
 
   detail.innerHTML = `
     <h3>${b.judul}</h3>
-    <p>${b.penulis}</p>
-    <p>${b.tahun} • ${b.kategori}</p>
+    <p><strong>Penulis:</strong> ${b.penulis}</p>
+    <p><strong>Tahun:</strong> ${b.tahun}</p>
+    <p><strong>Kategori:</strong> ${b.kategori}</p>
     <p>${b.deskripsi || '-'}</p>
     <img src="${b.cover || 'https://via.placeholder.com/200x300'}" style="max-width:200px;">
   `;
+
+  // === SISTEM REKOMENDASI ===
+  const rekomendasi = books.filter(
+    (book, index) => book.kategori === b.kategori && index !== i
+  );
+
+  if (rekomendasi.length === 0) {
+    rekom.innerHTML = 'Tidak ada rekomendasi buku lain.';
+    return;
+  }
+
+  rekom.innerHTML = '';
+  rekomendasi.forEach(book => {
+    rekom.innerHTML += `
+      <div style="margin-bottom:10px; padding:8px; border-bottom:1px solid #ccc;">
+        <strong>${book.judul}</strong><br>
+        <small>${book.penulis}</small>
+      </div>
+    `;
+  });
 }
 
+/* =======================
+   CRUD
+======================= */
 function deleteBook(i) {
   if (confirm('Hapus buku?')) {
     books.splice(i, 1);
     saveBooks();
     renderBooks();
+    document.getElementById('detail').innerHTML = 'Pilih buku';
+    document.getElementById('recommendation').innerHTML = 'Pilih buku untuk melihat rekomendasi';
   }
 }
 
@@ -63,6 +96,9 @@ function editBook(i) {
   location.href = 'tambah.html';
 }
 
+/* =======================
+   FORM TAMBAH / EDIT
+======================= */
 const form = document.getElementById('bookForm');
 
 if (form) {
